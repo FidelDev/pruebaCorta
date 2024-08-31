@@ -1,5 +1,5 @@
 
-//TABLE LIBROS 
+//TABLE LIBROS
 POST http://localhost:8080/api/libros/create
 GET http://localhost:8080/api/libros/all
 GET http://localhost:8080/api/libros/onebyid/{id}
@@ -38,5 +38,19 @@ DELETE http://localhost:8080/api/prestamos/delete/{id}
 
 
 
+https://pruebacorta.onrender.com
+
+//TABLE LIBROS
+POST https://pruebacorta.onrender.com/api/libros/create
+GET https://pruebacorta.onrender.com/api/libros/all
+GET https://pruebacorta.onrender.com/api/libros/onebyid/{id}
+PUT https://pruebacorta.onrender.com/api/libros/update/{id}
+DELETE https://pruebacorta.onrender.com/api/libros/delete/{id}
 
 
+//TABLE PRESTAMOS
+POST https://pruebacorta.onrender.com/api/prestamos/createPrestamo
+GET https://pruebacorta.onrender.com/api/prestamos/retrieveAllLoan
+GET https://pruebacorta.onrender.com/api/prestamos/onebyid/{id}
+PUT https://pruebacorta.onrender.com/api/prestamos/update/{id}
+DELETE https://pruebacorta.onrender.com/api/prestamos/delete/{id}
