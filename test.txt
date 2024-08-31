@@ -1,0 +1,42 @@
+
+//TABLE LIBROS 
+POST http://localhost:8080/api/libros/create
+GET http://localhost:8080/api/libros/all
+GET http://localhost:8080/api/libros/onebyid/{id}
+PUT http://localhost:8080/api/libros/update/{id}
+DELETE http://localhost:8080/api/libros/delete/{id}
+
+
+{
+  "codLibro": 1,
+  "nombreLibro": "HolaMundo",
+  "editorial": "Editorial",
+  "autor": "Fidel",
+  "genero": "Programacion",
+  "paisLibro": "Guatemala",
+  "numeroPagina": 100,
+  "anioEdicion": "2024-01-01",
+  "moneda": 19.99
+}
+
+//TABLE PRESTAMOS
+POST http://localhost:8080/api/prestamos/createPrestamo
+GET http://localhost:8080/api/prestamos/retrieveAllLoan
+GET http://localhost:8080/api/prestamos/onebyid/{id}
+PUT http://localhost:8080/api/prestamos/update/{id}
+DELETE http://localhost:8080/api/prestamos/delete/{id}
+
+
+{
+  "codeLibro": 1,
+  "codUsuario": 1,
+  "fechaSalida": "2024-01-01",
+  "fechaMXdevolver": "2024-01-02",
+  "fechaDevolucion": "2024-01-03"
+}
+
+
+
+
+
+
