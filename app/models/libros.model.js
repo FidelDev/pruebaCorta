@@ -1,37 +1,33 @@
 
 module.exports = (sequelize, Sequelize) => {
 	const Libro = sequelize.define('libro', {	
-	  codLibro: {
+	  id_libro: {
 			type: Sequelize.INTEGER,
 			primaryKey: true,
     },
-	  nombreLibro: {
+	  titulo: {
 			type: Sequelize.STRING
 	  },
-	  editorial: {
+	  id_Autor: {
 			type: Sequelize.STRING
   	},
-	  autor: {
+	  isbn: {
 			type: Sequelize.STRING
 	  },
-    genero: {
+    editorial: {
         type: Sequelize.STRING
       },
-    paisLibro: {
-        type: Sequelize.STRING
-      },
-	  numeroPagina: {
-			type: Sequelize.INTEGER
-    },
-    anioEdicion: {
+      anio_publicacion: {
         type: Sequelize.DATEONLY,
       },
-    moneda: {
-        type: Sequelize.FLOAT,
-      },
-    copyrightby: {
+    categoria: {
         type: Sequelize.STRING,
-        defaultValue: '@Fide Developer'
+      },
+      cantidad_Disponible: {
+        type: Sequelize.STRING,
+      },
+      ubicacion: {
+        type: Sequelize.STRING,
       }
 	});
 	
@@ -39,22 +35,13 @@ module.exports = (sequelize, Sequelize) => {
 }
 
 /*
-    copyrightby: {
-      type: Sequelize.STRING,
-      defaultValue: 'prueba Fide'
-    }
-*/
-
-/*
-codLibro
-nombreLibro
+id_libro
+titulo
+id_Autor
+isbn
 editorial
-autor
-genero
-genero
-paisLibro
-numeroPagina
-anioEdicion
-moneda
-copyrightby
+anio_publicacion
+categoria
+cantidad_Disponible
+ubicacion
 */

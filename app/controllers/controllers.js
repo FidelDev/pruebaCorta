@@ -7,21 +7,21 @@ exports.create = (req, res) => {
     let libro = {};
 
     try{
-        libro.codLibro = req.body.codLibro,
-        libro.nombreLibro = req.body.nombreLibro,
+        libro.id_libro = req.body.id_libro,
+        libro.titulo = req.body.titulo,
+        libro.id_Autor = req.body.id_Autor,
+        libro.isbn = req.body.isbn,
         libro.editorial = req.body.editorial,
-        libro.autor = req.body.autor,
-        libro.genero  = req.body.genero,
-        libro.paisLibro = req.body.paisLibro,
-        libro.numeroPagina = req.body.numeroPagina,
-        libro.anioEdicion = req.body.anioEdicion,
-        libro.moneda = req.body.moneda
+        libro.anio_publicacion = req.body.anio_publicacion,
+        libro.categoria = req.body.categoria,
+        libro.cantidad_Disponible = req.body.cantidad_Disponible,
+        libro.ubicacion = req.body.ubicacion
     
         // Save to MySQL database
         Libro.create(libro).then(result => {    
             // 
             res.status(200).json({
-                message: "Save Book id = " + result.codLibro,
+                message: "Save Book id = " + result.id_libro,
                 libro: result,
             });
         });
@@ -32,7 +32,6 @@ exports.create = (req, res) => {
         });
     }
 }
-
 
 //READ
 exports.retrieveAllLibro = (req, res) => {
@@ -58,7 +57,7 @@ exports.retrieveAllLibro = (req, res) => {
 //READ THE BOOKS BY ID
 exports.getLibrorById = (req, res) => {
     // find all Book information from 
-    let libroId = req.params.codLibro;
+    let libroId = req.params.id_libro;
 
     Libro.findByPk(libroId)
         .then(libro => {
@@ -94,22 +93,23 @@ exports.updateById = async (req, res) => {
         } else {    
             // update new change to database
             let updatedObject = {
-                codLibro: req.body.codLibro,
-                nombreLibro: req.body.nombreLibro,
+                id_libro: req.body.id_libro,
+                titulo: req.body.titulo,
+                id_Autor: req.body.id_Autor,
+                isbn: req.body.isbn,
                 editorial: req.body.editorial,
-                autor: req.body.autor,
-                genero: req.body.genero,
-                paisLibro: req.body.paisLibro,
-                numeroPagina: req.body.numeroPagina,
-                anioEdicion: req.body.anioEdicion,
-                moneda: req.body.moneda
+
+                anio_publicacion: req.body.anio_publicacion,
+                categoria: req.body.categoria,
+                cantidad_Disponible: req.body.cantidad_Disponible,
+                ubicacion: req.body.ubicacion
             }
-            let result = await Libro.update(updatedObject, {returning: true, where: {codLibro: libroId}});
-            
+            let result = await Libro.update(updatedObject, {returning: true, where: {id_libro: libroId}});
+          
             // return
             if(!result) {
                 res.status(500).json({
-                    message: "Error -> Can not update a book with id = " + req.params.codLibro,
+                    message: "Error -> Can not update a book with id = " + req.params.id_libro,
                     error: "Can NOT Updated",
                 });
             }
@@ -121,7 +121,7 @@ exports.updateById = async (req, res) => {
         }
     } catch(error){
         res.status(500).json({
-            message: "Error -> Can not update a book with id = " + req.params.codLibro,
+            message: "Error -> Can not update a book with id = " + req.params.id_libro,
             error: error.message
         });
     }
@@ -130,7 +130,7 @@ exports.updateById = async (req, res) => {
 //DELETE
 exports.deleteById = async (req, res) => {
     try{
-        let libroId = req.params.codLibro;
+        let libroId = req.params.id_libro;
         let libro = await Libro.findByPk(libroId);
 
         if(!libro){
@@ -147,7 +147,7 @@ exports.deleteById = async (req, res) => {
         }
     } catch(error) {
         res.status(500).json({
-            message: "Error -> Can NOT delete a book with id = " + req.params.codLibro,
+            message: "Error -> Can NOT delete a book with id = " + req.params.id_libro,
             error: error.message,
         });
     }

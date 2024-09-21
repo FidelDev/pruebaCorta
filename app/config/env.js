@@ -14,5 +14,3 @@ const env = {
   };
   
   module.exports = env;
-
-  //postgresql://umg_salama_24902121296_user:DkCqvYXX96XITqXe9n7QcJh8pAfrfWv7@dpg-cr7b172j1k6c739oc610-a/umg_salama_24902121296
