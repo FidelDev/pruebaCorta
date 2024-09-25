@@ -7,9 +7,9 @@ const prestamos = require('../controllers/prestamo.controller.js')
 //controllers.js
 router.post('/api/libros/create', libros.create);
 router.get('/api/libros/all', libros.retrieveAllLibro);
-router.get('/api/libros/onebyid/:codLibro', libros.getLibrorById);
-router.put('/api/libros/update/:codLibro', libros.updateById);
-router.delete('/api/libros/delete/:codLibro', libros.deleteById);
+router.get('/api/libros/onebyid/:id_libro', libros.getLibrorById);
+router.put('/api/libros/update/:id_libro', libros.updateById);
+router.delete('/api/libros/delete/:id_libro', libros.deleteById);
 
 //prestamo.controller.js
 router.post('/api/prestamos/createPrestamo', prestamos.createPrestamo);
