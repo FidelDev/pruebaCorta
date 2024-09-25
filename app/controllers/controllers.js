@@ -80,7 +80,7 @@ exports.getLibrorById = (req, res) => {
 //UPDATE
 exports.updateById = async (req, res) => {
     try{
-        let libroId = req.params.codLibro;
+        let libroId = req.params.id_libro;
         let libro = await Libro.findByPk(libroId);
     
         if(!libro){
@@ -98,7 +98,6 @@ exports.updateById = async (req, res) => {
                 id_Autor: req.body.id_Autor,
                 isbn: req.body.isbn,
                 editorial: req.body.editorial,
-
                 anio_publicacion: req.body.anio_publicacion,
                 categoria: req.body.categoria,
                 cantidad_Disponible: req.body.cantidad_Disponible,
