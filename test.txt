@@ -43,9 +43,9 @@ https://pruebacorta.onrender.com
 //TABLE LIBROS
 POST https://pruebacorta.onrender.com/api/libros/create
 GET https://pruebacorta.onrender.com/api/libros/all
-GET https://pruebacorta.onrender.com/api/libros/onebyid/{id}//
-PUT https://pruebacorta.onrender.com/api/libros/update/{id}//
-DELETE https://pruebacorta.onrender.com/api/libros/delete/{id}//
+GET https://pruebacorta.onrender.com/api/libros/onebyid/{id}
+PUT https://pruebacorta.onrender.com/api/libros/update/{id}
+DELETE https://pruebacorta.onrender.com/api/libros/delete/{id}
 
 
 //TABLE PRESTAMOS
